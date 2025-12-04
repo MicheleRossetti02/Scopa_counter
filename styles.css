@@ -765,33 +765,149 @@ body {
 
 @media (max-width: 640px) {
     .app-container {
-        padding: var(--spacing-sm);
-        gap: var(--spacing-sm);
+        padding: var(--spacing-xs);
+        gap: var(--spacing-xs);
+        height: 100vh;
+        height: 100dvh;
+        /* Dynamic viewport height per mobile */
     }
 
     .header {
-        flex-direction: column;
-        gap: var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+        flex-shrink: 0;
     }
 
     .header h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
+    .btn-end-game {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.9rem;
+        min-height: 44px;
+        /* Minimo per accessibilità touch */
+    }
+
+    /* Nascondi mode toggle su mobile - solo modalità touch */
+    .mode-toggle {
+        display: none;
+    }
+
+    /* Nascondi sempre l'input tastiera su mobile */
+    .keyboard-input-container {
+        display: none !important;
+    }
+
+    /* Nascondi last card indicator su mobile per risparmiare spazio */
+    .last-card-indicator {
+        display: none;
+    }
+
+    /* Nascondi il titolo "Carte" su mobile per risparmiare spazio */
+    .section-header {
+        display: none;
+    }
+
+    /* Nascondi le statistiche su mobile - solo griglia carte */
+    .stats-section {
+        display: none;
+    }
+
+    /* Layout principale: solo card section */
+    .main-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .card-section {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    /* Griglia carte ottimizzata: 2 righe da 5 */
     .card-grid {
         grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         gap: var(--spacing-sm);
+        flex: 1;
+        align-content: center;
+    }
+
+    /* Pulsanti carte più grandi e touch-friendly */
+    .card-button {
+        padding: var(--spacing-md);
+        border-radius: var(--radius-lg);
+        min-height: 60px;
+        min-width: 44px;
+        /* Minimo per accessibilità touch */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-xs);
+        touch-action: manipulation;
+        /* Migliora risposta touch */
+        -webkit-tap-highlight-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .card-button:active {
+        transform: scale(0.95);
+        background: var(--bg-hover);
     }
 
     .card-value {
         font-size: 2rem;
+        font-weight: 800;
     }
 
     .card-counter {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
     }
 
-    .main-layout {
-        gap: var(--spacing-sm);
+    /* Progress bar compatta */
+    .progress-bar-container {
+        flex-shrink: 0;
+        padding: var(--spacing-xs) 0;
+    }
+
+    .progress-label {
+        font-size: 0.85rem;
+    }
+
+    .progress-bar {
+        height: 10px;
+    }
+
+    /* Modal ottimizzato per mobile */
+    .modal {
+        padding: var(--spacing-lg);
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .modal h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn-modal {
+        padding: var(--spacing-md);
+        min-height: 60px;
+        touch-action: manipulation;
+    }
+
+    .btn-modal .btn-icon {
+        font-size: 1.5rem;
+    }
+
+    .btn-cancel {
+        min-height: 44px;
+        touch-action: manipulation;
     }
 }

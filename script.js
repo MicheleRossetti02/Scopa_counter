@@ -417,6 +417,11 @@ function init() {
     renderCards();
     updateStatistics();
     updateHistoryDisplay();
+
+    // Forza modalità click su mobile
+    if (window.innerWidth <= 640) {
+        setInputMode('click');
+    }
 }
 
 // Start when DOM is ready
