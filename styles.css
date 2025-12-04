@@ -875,6 +875,7 @@ body {
 
     /* Statistiche sotto le carte */
     .stats-section {
+        display: flex !important;
         order: 1;
         flex-direction: column;
         overflow: visible;
