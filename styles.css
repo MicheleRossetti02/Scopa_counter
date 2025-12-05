@@ -798,14 +798,23 @@ body {
         display: none;
     }
 
+
     /* Nascondi sempre l'input tastiera su mobile */
     .keyboard-input-container {
         display: none !important;
     }
 
-    /* Nascondi last card indicator su mobile per risparmiare spazio */
+    /* Ultima carta compatta su mobile */
     .last-card-indicator {
-        display: none;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .last-card-label {
+        font-size: 0.75rem;
+    }
+
+    .last-card-value {
+        font-size: 1.1rem;
     }
 
     .section-header {
