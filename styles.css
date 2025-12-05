@@ -819,6 +819,7 @@ body {
     .card-section {
         padding: var(--spacing-sm);
         gap: var(--spacing-sm);
+        overflow: visible;
     }
 
     .card-grid {
